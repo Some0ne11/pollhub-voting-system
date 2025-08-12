@@ -137,7 +137,7 @@ export const EditPoll: React.FC<EditPollProps> = ({ poll, onUpdatePoll, onCancel
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
                                         placeholder={`Option ${index + 1}`}
                                         maxLength={80}
-                                    />
+                                    />  
                                     {poll.options.find(opt => opt.id === option.id) && (
                                         <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
                                             <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
@@ -151,7 +151,7 @@ export const EditPoll: React.FC<EditPollProps> = ({ poll, onUpdatePoll, onCancel
                                         type="button"
                                         onClick={() => removeOption(index)}
                                         className="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors"
-                                    >
+                                    >   
                                         <X className="w-5 h-5" />
                                     </button>
                                 )}
@@ -165,13 +165,13 @@ export const EditPoll: React.FC<EditPollProps> = ({ poll, onUpdatePoll, onCancel
                             type="button"
                             onClick={addOption}
                             className="mt-3 flex items-center gap-2 px-4 py-2 text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
-                        >
+                        >   
                             <Plus className="w-4 h-4" />
                             Add Option
                         </button>
                     )}
                 </div>
-                
+
                 <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
                     <h4 className="font-medium text-amber-800 mb-2">⚠️ Important Notes:</h4>
                     <ul className="text-sm text-amber-700 space-y-1">
@@ -185,7 +185,7 @@ export const EditPoll: React.FC<EditPollProps> = ({ poll, onUpdatePoll, onCancel
                     <button
                         type="submit"
                         className="flex-1 bg-gradient-to-r from-orange-500 to-red-600 text-white py-3 px-6 rounded-lg font-medium hover:from-orange-600 hover:to-red-700 transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center gap-2"
-                    >
+                    >   
                         <Save className="w-4 h-4" />
                         Save Changes
                     </button>
@@ -193,11 +193,11 @@ export const EditPoll: React.FC<EditPollProps> = ({ poll, onUpdatePoll, onCancel
                         type="button"
                         onClick={onCancel}
                         className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors"
-                    >
+                    >   
                         Cancel
                     </button>
                 </div>
             </form>
         </div>
-    );
-};
+    );  
+};      
