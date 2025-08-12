@@ -14,12 +14,16 @@ export interface Poll {
     votedUsers: string[];
     lastEditedAt?: Date;
     editHistory: EditRecord[];
+    allowedUsers?: string[];    // Array of allowed user emails
+    isRestricted: boolean;      // Whether this poll is restricted to whitelist
+    status: 'active' | 'on-hold' | 'closed';
 }
 
 export interface CreatePollData {
     title: string;
     description: string;
     options: string[];
+    isRestricted?: boolean;
 }
 
 export interface EditPollData {
