@@ -4,7 +4,7 @@ export const generateId = (): string => {
     return Math.random().toString(36).substr(2, 9);
 };
 
-export const createPoll = (data: CreatePollData): Poll => {
+export const createPoll = (data: CreatePollData, allowedUsers?: string[]): Poll => {
     const options: PollOption[] = data.options.map(text => ({
         id: generateId(),
         text,
@@ -19,7 +19,10 @@ export const createPoll = (data: CreatePollData): Poll => {
         createdAt: new Date(),
         totalVotes: 0,
         votedUsers: [],
-        editHistory: []
+        editHistory: [],
+        isRestricted: data.isRestricted || false,
+        allowedUsers: data.isRestricted ? allowedUsers : undefined,
+        status: 'active'
     };
 };
 

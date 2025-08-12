@@ -6,9 +6,23 @@ const ADMIN_CREDENTIALS = {
     password: 'admin123'
 };
 
+export const getWhitelistedUsers = (): any[] => {
+    const whitelist = localStorage.getItem('userWhitelist');
+    return whitelist ? JSON.parse(whitelist) : [];
+};
+
+export const setWhitelistedUsers = (users: any[]): void => {
+    localStorage.setItem('userWhitelist', JSON.stringify(users));
+};
+
+export const isUserWhitelisted = (email: string): boolean => {
+    const whitelist = getWhitelistedUsers();
+    return whitelist.some(user => user.email.toLowerCase() === email.toLowerCase());
+};
+
 export const authenticateAdmin = (credentials: AdminCredentials): boolean => {
     return credentials.username === ADMIN_CREDENTIALS.username && 
-            credentials.password === ADMIN_CREDENTIALS.password;
+        credentials.password === ADMIN_CREDENTIALS.password;
 };
 
 export const getCurrentUser = (): User => {
