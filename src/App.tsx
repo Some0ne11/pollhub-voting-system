@@ -4,7 +4,7 @@ import { CreatePoll } from './components/CreatePoll';
 import { EditPoll } from './components/EditPoll';
 import { AdminLogin } from './components/AdminLogin';
 import { DeleteConfirmation } from './components/DeleteConfirmation';
-import { UserWhitelistManager } from './components/UserWhitelistManager';
+import { UserWhitelistManager } from './components/UserWhiteListManager';
 import { PollResultsExport } from './components/PollResultsExport';
 import { UserEmailPrompt } from './components/UserEmailPrompt';
 import { PollList } from './components/PollList';
